@@ -19,10 +19,7 @@ async def ping(ctx):
     await ctx.send('pong!!!')
 
 
-center = (4, 4)
-
-
-def gen_array():
+def gen_array(center):
     array = np.random.rand(10, 10)
 
     level = 0.85
@@ -34,6 +31,7 @@ def gen_array():
         for j in range(center[1] - 1, center[1] + 2):
             array[i, j] = 0
     return array
+
 
 def mine_count(array, x, y):
     count = 0
@@ -56,7 +54,7 @@ def all_mine_count(array):
     return count
 
 
-def replace_char(count, array):
+def replace_char(count, array, center):
     char_dict = [":zero:", ":one:", ":two:", ":three:", ":four:", ":five:", ":six:", ":seven:", ":eight:", ":nine:"]
     rtv = ""
     for i, line in enumerate(count):
@@ -75,6 +73,7 @@ def replace_char(count, array):
 
 @bot.command()
 async def minesweeper(ctx):
+    center = (4, 4)
     array = gen_array()
     count = all_mine_count(array)
     msg = replace_char(count, array)
