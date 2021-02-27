@@ -20,7 +20,7 @@ async def ping(ctx):
 
 @bot.command()
 async def minesweeper(ctx):
-    await.send('''||:zero:||||:zero:||||:zero:||||:one:||||:one:||||:two:||||:two:||||:two:||||:one:||||:zero:||
+    await ctx.send('''||:zero:||||:zero:||||:zero:||||:one:||||:one:||||:two:||||:two:||||:two:||||:one:||||:zero:||
 ||:zero:||||:one:||||:two:||||:three:||||:bomb:||||:two:||||:bomb:||||:bomb:||||:one:||||:zero:||
 ||:one:||||:two:||||:bomb:||||:bomb:||:three::two::two:||:two:||||:one:||||:zero:||
 ||:one:||||:bomb:||||:four:||||:bomb:||:two::zero::zero:||:zero:||||:zero:||||:zero:||
