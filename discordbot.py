@@ -77,6 +77,6 @@ async def minesweeper(ctx):
     array = gen_array()
     count = all_mine_count(array)
     msg = replace_char(count, array)
-    await.send(msg)
+    await ctx.send(msg)
 
 bot.run(token)
