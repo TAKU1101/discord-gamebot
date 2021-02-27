@@ -72,8 +72,10 @@ def replace_char(count, array, center):
 
 
 @bot.command()
-async def minesweeper(ctx, n: int = 10):
-    await ctx.send(str(type(n)) + " " + str(n))
+async def minesweeper(ctx, n="10"):
+    if n.isdigit() == False:
+        await ctx.send("n is int")
+        return 0
     n = int(n)
     if n < 5 or 10 < n:
         await ctx.send("5 <= n <= 10")
