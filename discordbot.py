@@ -18,9 +18,8 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong!!!')
 
-
-def gen_array(center):
-    array = np.random.rand(10, 10)
+def gen_array(center, n):
+    array = np.random.rand(n, n)
 
     level = 0.85
 
@@ -72,11 +71,15 @@ def replace_char(count, array, center):
 
 
 @bot.command()
-async def minesweeper(ctx):
-    center = (4, 4)
-    array = gen_array(center)
+def minesweeper(ctx, n=10):
+    if n < 10:
+        await ctx.send("n >= 10")
+        return 0
+    center = (int(n*0.5), int(n*0.5))
+    array = gen_array(center, n)
     count = all_mine_count(array)
     msg = replace_char(count, array, center)
+    print(msg)
     await ctx.send(msg)
 
 
