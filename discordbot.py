@@ -72,7 +72,7 @@ def replace_char(count, array, center):
 
 
 @bot.command()
-async def minesweeper(ctx, n=10):
+async def minesweeper(ctx, n="10": str):
     try:
         n = int(n)
     except ValueError:
