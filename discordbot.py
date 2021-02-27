@@ -74,9 +74,9 @@ def replace_char(count, array, center):
 @bot.command()
 async def minesweeper(ctx):
     center = (4, 4)
-    array = gen_array()
+    array = gen_array(center)
     count = all_mine_count(array)
-    msg = replace_char(count, array)
+    msg = replace_char(count, array, center)
     await ctx.send(msg)
 
 bot.run(token)
