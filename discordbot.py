@@ -73,9 +73,13 @@ def replace_char(count, array, center):
 
 @bot.command()
 async def minesweeper(ctx, n=10):
-    n = int(n)
-    if n < 10:
-        await ctx.send("n >= 10")
+    try:
+        n = int(n)
+    except ValueError:
+        await ctx.send("n is int")
+        return 0
+    if n < 5:
+        await ctx.send("n >= 5")
         return 0
     center = (int(n*0.5), int(n*0.5))
     array = gen_array(center, n)
