@@ -19,6 +19,8 @@ async def ping(ctx):
     await ctx.send('pong!!!')
 
 
+"""
+
 def gen_array(center):
     array = np.random.rand(10, 10)
 
@@ -78,5 +80,7 @@ async def minesweeper(ctx):
     count = all_mine_count(array)
     msg = replace_char(count, array, center)
     await ctx.send(msg)
+
+"""
 
 bot.run(token)
