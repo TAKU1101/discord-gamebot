@@ -78,8 +78,8 @@ async def minesweeper(ctx, n=10):
     except ValueError:
         await ctx.send("n is int")
         return 0
-    if n < 5:
-        await ctx.send("n >= 5")
+    if n < 5 or 10 < n:
+        await ctx.send("5 <= n <= 10")
         return 0
     center = (int(n*0.5), int(n*0.5))
     array = gen_array(center, n)
